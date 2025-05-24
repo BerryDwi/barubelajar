@@ -39,6 +39,16 @@
                                 </tr>
                             @endforeach
                         </tbody>
+                        <div class="d-flex mb-3">
+                            <a href="{{ route('mahasiswa.export') }}" class="btn btn-success me-2">Export Excel</a>
+
+                            <form action="{{ route('mahasiswa.import') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="file" name="file" class="form-control d-inline-block" style="width:auto;"
+                                    required>
+                                <button class="btn btn-primary">Import Excel</button>
+                            </form>
+                        </div>
                     </table>
                 </div>
             </div>
